@@ -1,7 +1,7 @@
 from python.src.utility import cleanup
 import utility
 import predict
-import perspective_transform
+import image_preprocessing
 
 
 path_to_uploads = '../../uploads/'
@@ -13,7 +13,7 @@ print(filepath)
 
 
 #apply the necessary preprocessing
-# outpath = perspective_transform.persp_trans(filepath) #return output path of the file
+outpath = image_preprocessing.persp_trans(filepath) #return output path of the file
 
 
 
