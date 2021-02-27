@@ -54,7 +54,14 @@ input{
 button{
     cursor: pointer;
     border: 1px solid #FFFFFF;
-    background: red;
+    background: #f64c72;
     color: white;
     padding: 8px;
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+
+.trainvar{
+    text-align: right;
 }

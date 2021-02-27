@@ -1,13 +1,12 @@
-
 import glob
 import os
 
 
 # sorting the files in the directory based on creation time
-def mostrecentfile():
+def mostrecentfile(search_dir):
 
-    #specify the directory for searching
-    search_dir = "../../uploads/"
+    
+    
 
     #sorting the file according to modified time
     files = glob.glob(search_dir+"*")

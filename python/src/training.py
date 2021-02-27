@@ -8,14 +8,17 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator,load_img
 from tensorflow.keras.models import Sequential
 import numpy as np
 from glob import glob
+import shutil
 
 
 def train_model():
 
+    shutil.rmtree('../model/model2')
+
     IMAGE_SIZE = [224, 224]
 
-    train_path = '../resources/train'
-    test_path = '../resources/test'
+    train_path = '../resources/ml/train'
+    test_path = '../resources/ml/test'
 
 
     # Import the inception v3 library as shown below and add preprocessing layer to the front of VGG
@@ -90,7 +93,7 @@ def train_model():
     )
 
 
-    model.save('../model/model1')
+    model.save('../model/model2')
 
 
 if __name__=='__main__':

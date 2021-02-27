@@ -23,12 +23,36 @@
                 <input type ="submit" value = "upload"/>
 
             </form>
-            <br><br><br>
+
+            <br><br>
+            
             <form id = "form2" method = "GET" action ="/predict">
                 <button>predict</button>
             </form>
 
+            <p  id="message-1" class="trainvar" style="color:red"></p>
+            <p  id="message-2" class="trainvar" style="color: green;"></p>
+
+            
         </div>
+        <script>
+            const messageOne = document.querySelector('#message-1')
+            const messageTwo = document.querySelector('#message-2')
+            
+            console.log('{{data}}')
+
+            if('{{data}}'){
+            
+                messageOne.textContent = 'there are documents to be trained'
+                messageTwo.textContent = ''
+                
+            }else{
+                
+                messageTwo.textContent = 'there are no documents for training'
+                messageOne.textContent = ''
+            }
+        </script>
+
     
 
     {{>footer}}

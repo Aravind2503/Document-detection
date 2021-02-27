@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Upload</title>
+    
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+</head>
+
+<body>
+        
+
+
+        <div>
+            {{>header}}
+            document category : {{category}}
+
+            <p>is this a misclassification?choose correct category</p>
+            <form id = "form1" method = "GET" action ="/pickCategory">
+                <button>choose category</button>
+                
+            </form>
+
+
+            <p>is the document a new template?</p>
+            <form id = "form2" method = "GET" action ="/uploadImageForNewClass">
+                <button>create new class</button>
+                
+            </form>
+
+            {{!-- <br><br> --}}
+
+            <p>Use this document for further training?</p>
+            <form id = "form3" method = "GET" action ="/uploadImage">
+                <button>upload for training</button>
+            </form>
+
+           <br><br>
+
+
+            <form id = "form4" method = "GET" action ="/ocr">
+                
+                <button>proceed to ocr</button>
+                
+            </form>
+
+
+        </div>
+    
+
+    {{>footer}}
+    
+</body>
+
+</html>

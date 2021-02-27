@@ -36,33 +36,34 @@ def persp_trans(filepath):
         # Load image, convert to grayscale, and find edges
 
     image = cv2.imread(filepath)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU
-                           + cv2.THRESH_BINARY)[1]
-    (width, height) = (600, 350)
+    # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    # thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU
+    #                        + cv2.THRESH_BINARY)[1]
+    # (width, height) = (600, 350)
 
-    # Find contour and sort by contour area
+    # # Find contour and sort by contour area
 
-    cnts = cv2.findContours(thresh, cv2.RETR_EXTERNAL,
-                            cv2.CHAIN_APPROX_SIMPLE)
-    cnts = (cnts[0] if len(cnts) == 2 else cnts[1])
-    cnts = sorted(cnts, key=cv2.contourArea, reverse=True)
+    # cnts = cv2.findContours(thresh, cv2.RETR_EXTERNAL,
+    #                         cv2.CHAIN_APPROX_SIMPLE)
+    # cnts = (cnts[0] if len(cnts) == 2 else cnts[1])
+    # cnts = sorted(cnts, key=cv2.contourArea, reverse=True)
 
-    # perceptive transform
+    # # perceptive transform
 
-    (b, m) = biggestContour(cnts)
-    a = order_points(b)
-    pts1 = np.float32(a)
-    pts2 = np.float32([[0, 0], [width, 0], [0, height], [width,
-                      height]])
-    matrix = cv2.getPerspectiveTransform(pts1, pts2)
-    output = cv2.warpPerspective(image, matrix, (width, height))
+    # (b, m) = biggestContour(cnts)
+    # a = order_points(b)
+    # pts1 = np.float32(a)
+    # pts2 = np.float32([[0, 0], [width, 0], [0, height], [width,
+    #                   height]])
+    # matrix = cv2.getPerspectiveTransform(pts1, pts2)
+    # output = cv2.warpPerspective(image, matrix, (width, height))
+    output = image
     outpath = '../resources/preprocessing_output/out.jpeg'
     cv2.imwrite(outpath, output)
     return outpath
 
 
 if __name__ == '__main__':
-    biggestContour()
-    order_points()
-    persp_trans()
+    # biggestContour()
+    # order_points()
+    persp_trans('example3.jpeg')
