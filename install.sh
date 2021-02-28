@@ -18,7 +18,7 @@ pip install --upgrade setuptools
 python -m pip install --upgrade pip
 #installing python dependencies
 echo "installing python libraries..."
-pip3 install -r requirements.txt;
+pip install -r requirements.txt;
 
 #installing tesseract ocr
 echo "installing tesseract-ocr..."
