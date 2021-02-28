@@ -10,17 +10,23 @@ python3 -m venv doc-detect-env;
 #activating virtual environment
 source doc-detect-env/bin/activate;
 
+
+#upgrade setup tools 
+pip install --upgrade setuptools
+
+#upgrading pip version
+python -m pip install --upgrade pip
 #installing python dependencies
 echo "installing python libraries..."
 pip3 install -r requirements.txt;
 
 #installing tesseract ocr
 echo "installing tesseract-ocr..."
-sudo apt-install tesseract-ocr;
+sudo apt-get install tesseract-ocr;
 
 #installing python-3tk
 echo "installing python-3tk for GUI"
-sudo apt-install python3-tk;
+sudo apt-get install python3-tk;
 
 #deactivating virtual environment
 deactivate;
