@@ -33,10 +33,23 @@ echo 'making the required directories...'
 mkdir python/resources/preprocessing_output;
 mkdir python/resources/ml;
 mkdir python/resources/ml/buffer;
+
 mkdir python/resources/ml/test;
 mkdir python/resources/ml/train;
+
+#making directories for aadhar
+mkdir python/resources/ml/test/aadhar;
+mkdir python/resources/ml/train/aadhar;
+
+#making directories for pan
+mkdir python/resources/ml/test/pan;
+mkdir python/resources/ml/train/pan;
+
 mkdir python/resources/ml/buffer/test;
 mkdir python/resources/ml/buffer/train;
+mkdir uploads;
+
+mkdir python/model/model1/assets;
 
 
 #installing all the node dependencies
